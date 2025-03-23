@@ -1,0 +1,104 @@
+From the existing concept - the Point of Intersect Data
+
+
+Mission of the project
+The purpose of this project is to enhance and increase community resilience by identifying a structured and resilience-based land use reconfiguration schemes using Artificial Intelligence (AI) technologies such as machine learning. We will be focusing on the issues that have not been addressed in an urban context collectively before. The presented LTSG dataset is a collection of geographical and transportation data, containing Points of Interest (POIs), HDB buildings and public transportation data of Singapore. 
+
+ The POI data contains data points of places that people have an interest in visiting for a certain purpose, which include but not limited to educational institutes such as schools or libraries, shopping places such as supermarkets or convenience stores, recreational places such as parks or bars. Generally speaking, the POI data can tell us what kind of activities are happening at the location. The HDB data contains data points of apartment buildings where people reside. In short, the HDB data shows where people are staying, while the POI data shows where people are visiting. Every day, people travel between these locations, forming a certain connection between them. With the bus routing data, the bus ridership data and the subway routing data, we hope to provide information on the system that supports these travels. Thus, this dataset has the potential to be used by researchers in the field for many different tasks that require knowledge of transport, recreational, commercial and residential information of a city, especially to explore their influence on each other. 
+
+Data Sources
+ The geography information is extracted via a combination of Google Places API and OneMap API. 
+
+The housing and administrative information is provided by the Housing and Development Board (HDB), the Urban Redevelopment Authority (URA) and the Land Transport Authority (LTA), published on Data.gov.sg and DataMall.
+
+The demographic information is provided by the island-wide General Household Survey 2015.
+
+Location and Administrative Division
+All data points come with the location and administrative division information. They can be used for data segmentation, network construction, etc.
+
+lat & lng
+
+The latitude and longitude of the establishment.
+subzone, planning_area, region
+
+The subzone, planning area, and region designated by Urban Redevelopment Authority according to the Master Plan 2019, of which the establishment belongs to.
+POI Data
+This part of the dataset contains 8672 POIs around Singapore collected from Google Places API in September 2021. Attributes include their Google user ratings and number of ratings, the POI types (list of types can be found [here](https://developers.google.com/maps/documentation/places/web-service/supported_types)), and their street address, etc.
+
+name, place_id
+
+The name and Google place id of the POI for identificaition.
+global_code, compound_code
+
+The complete and shortened version of Google Plus Codes of the establishment, which is interchangeable with the latitude and longitude.
+types
+
+A list of types labelled for the establishment, such as bank, park, shopping_mall. For more detailed information, see Place Types, Table 1.
+
+rating
+
+The combined user rating given by Google Map users, ranging from 1.0 to 5.0.
+
+user_ratings_total
+
+The total number of reviews submitted by Google Map users.
+
+HDB Data
+This part of the dataset contains 12442 HDB buildings in Singapore. Attributes include their block number, street address, zipcode, the year when they were built, the number of dwelling units, and the functionality of the building, etc.
+
+blk_no, street
+
+The block number and street of the HDB building.
+year
+
+The year when the building is completed.
+units
+The number of dwelling units in the building.
+types
+
+The functionality of the facilities in the building. The list of functionality labels include residential, commercial, market hawker, miscellaneous (Examples include admin office, childcare centre, education centre, Residents’ Committees centre), multistorey carpark and precinct pavilion.
+Bus Routing Data
+This part of the dataset contains information on 554 public bus routes with 5049 bus stations operating in Singapore during January 2020. 5045 of these stations are located within Singapore.
+
+stop_id, name
+
+The 5-digit identifier code and the name of the bus stop.
+line
+
+The Service Number of the bus route.
+direction
+
+The direction of the bus stop in this bus route. 1 for loop lines or the default direction, 2 for the reverse direction.
+sequence
+
+The order of this station on this line in this direction.
+distance
+
+The distance from this station to the starting station in km.
+Bus Ridership Data
+This part of the dataset contains information on the monthly ridership for 5018 bus stations during July, August, and September 2021.
+
+stop_id
+
+The 5-digit identifier code of the bus stop.
+month
+
+The month of the record. 202107 stands for July 2021.
+day
+
+The type of the day of the record. WD stands for weekday and H stands for weekend/holiday.
+hour
+
+The hour of the record in 24-h format. 15 means the record numbers are gathered from 15:00 pm to 15:59 pm.
+in, out
+
+The number of passengers tapping in/out of this bus stop during a typical hour and type of day of the month.
+Subway Routing Data
+This part of the dataset contains information on 9 subway routes (including MRT and LRT) and 166 subway stations operating in Singapore as of Jan 2020.
+
+stop_id, name
+
+The identifier code and the name of the subway stop.
+line
+
+The name of the MRT/LRT line.
